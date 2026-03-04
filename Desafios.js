@@ -39,7 +39,7 @@ console.log("_______________________________");
 // ------------------------------------------------------------
 const letras2 = ['a', 'b', 'c', 'd', 'e', 't'];
 // a) Crie um novo array que retorne a palavra "batata" ao ser exibido no console.
-
+console.log(letras2[1], letras2[0], letras2[5], letras2[0], letras2[5], letras2[0]);
 
 console.log("_______________________________");
 
