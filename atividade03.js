@@ -141,32 +141,44 @@ let lerTeclado = require('readline-sync')
 
 // → Seu código aqui:
 
-const pessoa1 = {
-    Nome0: lerTeclado.question('Digite o seu nome: '),
-    Idade0: lerTeclado.questionInt('Digite o sua idade: '),
-    Endereço0: lerTeclado.question('Digite o seu endereço: ')
+// const pessoa1 = {
+//     Nome: lerTeclado.question('Digite o seu nome: '),
+//     Idade: lerTeclado.questionInt('Digite o sua idade: '),
+//     Endereço: {
+//         cidade: lerTeclado.question('Digite o sua cidade: '),
+//         rua: lerTeclado.question('Digite o sua rua: '),
+//         numero:lerTeclado.questionInt('Digite o seu numero: ')
+//     }
+// };
 
-};
+// const pessoa2 = {
+//     Nome: lerTeclado.question('Digite o seu nome: '),
+//     Idade: lerTeclado.questionInt('Digite o sua idade: '),
+//     Endereço: {
+//         cidade: lerTeclado.question('Digite o sua cidade: '),
+//         rua: lerTeclado.question('Digite o sua rua: '),
+//         numero:lerTeclado.questionInt('Digite o seu numero: ')
+//     }
+// };
 
-const pessoa2 = {
-    Nome1: lerTeclado.question('Digite o seu nome: '),
-    Idade1: lerTeclado.questionInt('Digite o sua idade: '),
-    Endereço1: lerTeclado.question('Digite o seu endereço: ')
+// const pessoa3 = {
+//     Nome: lerTeclado.question('Digite o seu nome: '),
+//     Idade: lerTeclado.questionInt('Digite o sua idade: '),
+//     Endereço: {
+//         cidade: lerTeclado.question('Digite o sua cidade: '),
+//         rua: lerTeclado.question('Digite o sua rua: '),
+//         numero:lerTeclado.questionInt('Digite o seu numero: ')
+//     }
+// };
 
-};
+// let listaDeUsuarios = [pessoa1, pessoa2, pessoa3]; 
 
-const pessoa3 = {
-    Nome2: lerTeclado.question('Digite o seu nome: '),
-    Idade2: lerTeclado.questionInt('Digite o sua idade: '),
-    Endereço2: lerTeclado.question('Digite o seu endereço: ')
+// console.table(listaDeUsuarios);
+// console.log(listaDeUsuarios[1].Nome, listaDeUsuarios[1].Idade);
+// console.log(listaDeUsuarios[2].Endereço);
+// console.log(listaDeUsuarios[0].Nome, listaDeUsuarios[0].Endereço.rua);
 
-};
 
-let listaDeUsuarios = [pessoa1, pessoa2, pessoa3]; 
-
-console.table(listaDeUsuarios);
-console.log(listaDeUsuarios[1].Nome1);
-console.log(listaDeUsuarios[1].Idade1);
 // ------------------------------------------------------------
 // EXERCÍCIO 8 – Ranking de notas
 // ------------------------------------------------------------
@@ -179,9 +191,40 @@ console.log(listaDeUsuarios[1].Idade1);
 // g) Exiba o nome e a 3ª nota do 1º aluno.
 
 // → Seu código aqui:
+// const aluno1 =  {
+//     Nome: lerTeclado.question('Digite o seu nome: '),
+//     Nota1: lerTeclado.questionInt('Digite o sua nota: '),
+//     Nota2: lerTeclado.questionInt('Digite o sua nota: '),
+//     Nota3: lerTeclado.questionInt('Digite o sua nota: ')
+
+// };
+
+// const aluno2 = {
+//     Nome: lerTeclado.question('Digite o seu nome: '),
+//     Nota1: lerTeclado.questionInt('Digite o sua nota: '),
+//     Nota2: lerTeclado.questionInt('Digite o sua nota: '),
+//     Nota3: lerTeclado.questionInt('Digite o sua nota: ')
+
+// };
+
+// const aluno3 = {
+//     Nome: lerTeclado.question('Digite o seu nome: '),
+//     Nota1: lerTeclado.questionInt('Digite o sua nota: '),
+//     Nota2: lerTeclado.questionInt('Digite o sua nota: '),
+//     Nota3: lerTeclado.questionInt('Digite o sua nota: ')
+
+// };
 
 
-console.log("_______________________________");
+// let turma = [aluno1, aluno2, aluno3];
+
+// console.table(turma);
+// console.log(turma[1].Nome, turma[1].Nota1);
+// console.log(turma[2].Nome, turma[2].Nota2);
+// console.log(turma[0].Nome, turma[0].Nota3);
+
+
+// console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -201,8 +244,18 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+// const produto = {
+//     Nome:  lerTeclado.question('Digite o seu nome: '),
+//     Categoria:  lerTeclado.question('Digite o sua categoria: '),
+//     Preço:  lerTeclado.questionInt('Digite o seu preço: '),
+//     Quantidade:  lerTeclado.questionInt('Digite o sua quantidade: '),
+//     Disponivel: lerTeclado.keyInYN('Esta disponivel? (s/n) ')
+// };
 
-console.log("_______________________________");
+// console.table(produto);
+
+
+// console.log(`Produto:${produto.Nome}| Categoria:${produto.Categoria} | Estoque:${produto.Quantidade} un`);
 
 
 // ------------------------------------------------------------
@@ -214,5 +267,24 @@ console.log("_______________________________");
 //    - emEstoque (boolean) - (sim/não, usando keyInYN())
 // b) Crie uma lista "estoqueFarmacia" e insira os objetos criados com push().
 // c) Exiba a lista com console.table().
+
 // d) Exiba somente o nome e preço do 2 medicamento.
 // e) Exiba somente o nome e se está em estoque o 1 medicamento.
+
+const medicamento1 = {
+    Nome: lerTeclado.question('Digite o nome do medicamento: '),
+    Preco: lerTeclado.questionInt('Digite o preço: '),
+    emEstoque: lerTeclado.keyInYN('Esta disponivel? (s/n) ')
+};
+
+const medicamento2 = {
+    Nome: lerTeclado.question('Digite o nome do medicamento: '),
+    Preco: lerTeclado.questionInt('Digite o preço: '),
+    emEstoque: lerTeclado.keyInYN('Esta disponivel? (s/n) ')
+};
+
+const estoqueFarmacia = [];
+estoqueFarmacia.push(medicamento1, medicamento2);
+console.table(estoqueFarmacia);
+console.log(estoqueFarmacia[1].Nome, estoqueFarmacia[1].Preco);
+console.log(estoqueFarmacia[0].Nome, estoqueFarmacia[0].emEstoque);
