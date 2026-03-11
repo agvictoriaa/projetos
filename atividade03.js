@@ -271,20 +271,20 @@ let lerTeclado = require('readline-sync')
 // d) Exiba somente o nome e preço do 2 medicamento.
 // e) Exiba somente o nome e se está em estoque o 1 medicamento.
 
-const medicamento1 = {
-    Nome: lerTeclado.question('Digite o nome do medicamento: '),
-    Preco: lerTeclado.questionInt('Digite o preço: '),
-    emEstoque: lerTeclado.keyInYN('Esta disponivel? (s/n) ')
-};
+// const medicamento1 = {
+//     Nome: lerTeclado.question('Digite o nome do medicamento: '),
+//     Preco: lerTeclado.questionInt('Digite o preço: '),
+//     emEstoque: lerTeclado.keyInYN('Esta disponivel? (s/n) ')
+// };
 
-const medicamento2 = {
-    Nome: lerTeclado.question('Digite o nome do medicamento: '),
-    Preco: lerTeclado.questionInt('Digite o preço: '),
-    emEstoque: lerTeclado.keyInYN('Esta disponivel? (s/n) ')
-};
+// const medicamento2 = {
+//     Nome: lerTeclado.question('Digite o nome do medicamento: '),
+//     Preco: lerTeclado.questionInt('Digite o preço: '),
+//     emEstoque: lerTeclado.keyInYN('Esta disponivel? (s/n) ')
+// };
 
-const estoqueFarmacia = [];
-estoqueFarmacia.push(medicamento1, medicamento2);
-console.table(estoqueFarmacia);
-console.log(estoqueFarmacia[1].Nome, estoqueFarmacia[1].Preco);
-console.log(estoqueFarmacia[0].Nome, estoqueFarmacia[0].emEstoque);
+// const estoqueFarmacia = [];
+// estoqueFarmacia.push(medicamento1, medicamento2);
+// console.table(estoqueFarmacia);
+// console.log(estoqueFarmacia[1].Nome, estoqueFarmacia[1].Preco);
+// console.log(estoqueFarmacia[0].Nome, estoqueFarmacia[0].emEstoque);
