@@ -71,11 +71,11 @@ let lerTeclado = require('readline-sync')
 //   4) true e 1
 
 // → Seu código aqui:
-console.log(5 !== 5);
-console.log(5 !== "5");
-console.log(7 !== 3);
-console.log(true !== 1);
-console.log(5 !== 3); 
+// console.log(5 !== 5);
+// console.log(5 !== "5");
+// console.log(7 !== 3);
+// console.log(true !== 1);
+// console.log(5 !== 3); 
 
 // let a = 5;
 // let b = "5"; 
@@ -255,8 +255,28 @@ console.log("_______________________________");
 
 let alunos = [
     {
-        nome: lerTeclado.question('Digite o nseu nome: '),
-        notas: lerTeclado.questionInt('Digite tres notas ') 
+       Aluno1: lerTeclado.question('Digite o seu nome: '),
+        nota1: lerTeclado.questionInt('Digite a primeira nota: '),
+        nota2: lerTeclado.questionInt('Digite a segunda nota: '),
+        nota3: lerTeclado.questionInt('Digite a terceira nota: '),
+    },{
+        Aluno2: lerTeclado.question('Digite o seu nome: '),
+        nota4: lerTeclado.questionInt('Digite a primeira notas: '),
+        nota5: lerTeclado.questionInt('Digite a segunda nota: '),
+        nota6: lerTeclado.questionInt('Digite a terceira nota: ')
     }
-]
+];
+console.log(alunos);
+
+let mediaAluno1 = (alunos[0].nota1+alunos[0].nota2+alunos[0].nota3)/3;
+let mediaAluno2 = (alunos[1].nota4+alunos[1].nota5+alunos[1].nota6)/3;
+console.log(mediaAluno1+mediaAluno2)/3;
+let nota1M = alunos.Aluno1.nota1 > alunos.Aluno2.nota4 ? "aluno1 com nota1 maior" : "aluno2 com nota4 maior";
+let nota2M = alunos.Aluno1.nota2 > alunos.Aluno2.nota5 ? "aluno1 com nota2 maior" : "aluno2 com nota5 maior";
+let nota3M = alunos.Aluno1.nota3 > alunos.Aluno2.nota6 ? "aluno1 com nota3 maior" : "aluno2 com nota6 maior";
+
+
+
+
+
 // console.log("_______________________________");
