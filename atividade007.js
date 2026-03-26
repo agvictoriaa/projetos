@@ -230,17 +230,22 @@ let lerTeclado = require('readline-sync')
 // e) Exiba uma mensagem final: "<nome>: <situação> (média: <média>)"
 
 // → Seu código aqui:
-let aluno = { 
-    Nome: lerTeclado.question("Digite seu nome: "),
-    notaProva1: lerTeclado.questionInt("Digite a primeira nota: "),
-    notaProva2: lerTeclado.questionInt("Digite a segunda nota: ")
-}; 
-let media = (aluno.notaProva1 + aluno.notaProva2)/2;
-media.aluno
-console.log(aluno);
+//  let notaAluno = 6.8;
+// let status 
+// if (notaAluno >=9){
+//     status = "Aprovado com mérito"
+// } else if (notaAluno>=7){
+//     status = ("Aprovado")
+// } else if (notaAluno>=5){
+//     status = "Recuperação"
+// } else {
+//     status = "Reprovado" 
+// };
+
+// console.log(`De acordo com as notas do aluno ele está: ${status}`);
 
 
-console.log("_______________________________");
+// console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -263,4 +268,38 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-console.log("_______________________________");
+console.log("Escolha uma operação")
+let calculo = {
+    numeroA: lerTeclado.questionFloat('Digite o primeiro numero: '),
+    numeroB: lerTeclado.questionFloat('Digite o segundo numero: '),
+    operacaoEscolhida: lerTeclado.questionInt('1 – Soma | 2 – Subtração | 3 – Multiplicação | 4 – Divisão: '),
+    simbolo: ``,
+    resultado: ``
+};
+
+if (calculo.operacaoEscolhida === 1){
+    calculo.simbolo = "+"
+    calculo.resultado = calculo.numeroA + calculo.numeroB;
+} else if (calculo.operacaoEscolhida === 2){
+    calculo.simbolo = "-"
+    calculo.resultado = calculo.numeroA - calculo.numeroB;
+} else if (calculo.operacaoEscolhida === 3){
+    calculo.simbolo = "*"
+    calculo.resultado = calculo.numeroA * calculo.numeroB;
+} else if (calculo.operacaoEscolhida === 4) {
+    if(calculo.numeroB === 0){
+        console.log("ERRO");
+    } else{
+        calculo.simbolo = "/"
+        calculo.resultado = calculo.numeroA / calculo.numeroB;
+    }
+} else {
+    console.log("Opereracao invalida, digite do 1 ao 4")
+};
+
+if (calculo.simbolo != ``){
+    console.log(`${calculo.numeroA} ${calculo.simbolo} ${calculo.numeroB} = ${calculo.resultado}`);
+}
+
+// console.log("_______________________________");
+
