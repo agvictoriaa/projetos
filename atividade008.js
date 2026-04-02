@@ -275,43 +275,44 @@ console.log("_______________________________");
 // c) Exiba: "<nome> – Nota: <nota> | Conceito: <conceito> | <mensagem>"
 
 // → Seu código aqui:
-// let usuario = {
-//     nome: lerTeclado.question("Digite seu nome:"),
-//     nota: lerTeclado.questionInt("Digite uma nota de 0 a 10: ")
-// }
-// switch(usuario.nota){
+// let dados = {
+//     nome: lerTeclado.question (`Digite o seu nome: `),
+//     Nota: lerTeclado.questionInt (`Digite uma nota de 0 a 10: `),
+//     conceito: ``
+// };
+//     switch (dados.Nota){
 //     case 10:
-//     case 9:
-//         usuario.conceito = "A"
-//         usuario.mensagem = "Excelente!"
+//     case 9: 
+//         dados.conceito =  "conceito: A"
+//         dados.mensagem = ("Excelente!"); 
 //         break;
-//     case 8:
+//     case 8: 
 //     case 7:
-//         usuario.conceito = "B"
-//         usuario.mensagem = "Muito bom!"
-//         break;
+//         dados.conceito =  "conceito: B"
+//         dados.mensagem = ("Muito bom!"); 
+//         break; 
 //     case 6:
 //     case 5:
-//         usuario.conceito = "C"
-//         usuario.mensagem = "Suficiente."
-//         break;
+//         dados.conceito =   "→ conceito: C"
+//         dados.mensagem = ("Suficiente."); 
+//         break; 
 //     case 4:
 //     case 3:
-//         usuario.conceito = "D"
-//         usuario.mensagem = "Em recuperação."
-//         break;
+//         dados.conceito =   "→ conceito: D"
+//         dados.mensagem = ("Em recuperação."); 
+//         break; 
 //     case 2:
 //     case 1:
 //     case 0:
-//         usuario.conceito = "F"
-//         usuario.mensagem = "Reprovado."
+//         dados.conceito =   "→ conceito: D"
+//         dados.mensagem = ("Reprovado."); 
 //         break;
 //     default:
-//     console.log("Nota inválida.")
-// }
-// console.log(`${usuario.nome} – Nota: ${usuario.nota} | Conceito: ${usuario.conceito} | ${usuario.mensagem}`)
+//         console.log("Nota inválida.");
+//     };
+    
+//         console.log(`${dados.nome} | ${dados.Nota} | ${dados.conceito} | ${dados.mensagem} `);
 
-// console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -328,51 +329,42 @@ console.log("_______________________________");
 //    No default, exiba: "Operação inválida."
 
 // → Seu código aqui:
-// const a = lerTeclado.questionInt("Digite um numero: ")
-// const b = lerTeclado.questionInt("Digite um numero: ")
-// console.log("1  Soma  2  Subtracao  3  Multiplicacao  4  Divisao  5  Resto")
-// let operacao = lerTeclado.questionInt("Escolha uma operacao: ")
-// let simbolo
-// let resultado
-// switch(operacao){
-//     case 1:
-//         resultado= a + b
-//         simbolo = "+"
-//         console.log(`${a} ${simbolo} ${b} = ${resultado}`)
-//         break
-//     case 2:
-//         resultado= a - b
-//         simbolo = "-"
-//         console.log(`${a} ${simbolo} ${b} = ${resultado}`)
-//         break
-//     case 3:
-//         resultado= a * b
-//         simbolo = "*"
-//         console.log(`${a} ${simbolo} ${b} = ${resultado}`)
-//         break
-//     case 4:
-//             if(b == 0) {
-//             console.log("Erro: divisão por zero não é permitida.")
-//             break
-//         }
-//         resultado= a / b
-//         simbolo = "/"
-//         console.log(`${a} ${simbolo} ${b} = ${resultado}`)
-//         break
-//     case 5:
-//         resultado= a % b
-//         simbolo = "%"
-//         console.log(`${a} ${simbolo} ${b} = ${resultado}`)
-//         break
-//     default:
-//     console.log("Operação inválida.")
-// }
+let dados = {
+    numero1: lerTeclado.questionFloat (`Digite o primeiro número: `),
+    Numero2: lerTeclado.questionFloat (`Digite o segundo número: `),
+    operacao: lerTeclado.questionInt (`1 – Soma | 2 – Subtração | 3 – Multiplicacao | 4 – Divisao | 5 – Resto: `)
+};
+ switch (dados.operacao){
+     case 1: 
+        dados.simbolo = "+"
+        dados.resultado = dados.numero1 + dados.Numero2;
+        break;
+    case 2:
+        dados.simbolo = "-"
+        dados.resultado = dados.numero1 - dados.Numero2;
+        break;
+    case 3:
+        dados.simbolo = "*"
+        dados.resultado = dados.numero1 * dados.Numero2;
+        break;
+    case 4: 
+    if (dados.numeroB === 0) {
+            console.log("ERRO");
+    }else { 
+        dados.simbolo = "/";
+        dados.resultado = dados.numero1 / dados.Numero2;
+    }
+        break;
+    case 5:
+        dados.simbolo = "%"
+        dados.resultado = dados.numero1 % dados.Numero2;
+        break;
+    default: 
+        console.log("Operação inválida")
+ };
 
+ console.log(`${dados.numero1} ${dados.simbolo} ${dados.Numero2} = ${dados.resultado}`);
 
-console.log("_______________________________");
-
-
-// ------------------------------------------------------------
 // EXERCÍCIO 10 – Menu de loja completo
 // ------------------------------------------------------------
 // a) Crie um objeto "loja" com:
