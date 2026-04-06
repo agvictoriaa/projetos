@@ -151,13 +151,98 @@ let lerTeclado = require('readline-sync')
 let usuario = {
     nomeViajante: lerTeclado.question("DIgite seu nome: "),
     idade: lerTeclado.questionInt("Digite sua idade: "),
-    orcamento: lerTeclado.questionFloat("Digite uma opção: 1) Economica, 2) Moderado, 3) Luxo")
+    orcamento: lerTeclado.questionFloat("Digite uma opção: 1) Economica, 2) Moderado, 3) Luxo: ")
 }
+
+console.log(`Olá, ${usuario.nomeViajante}! Vamos encontrar o destino perfeito para você.`)
+
 if(usuario.orcamento === 1){
     console.log("Economica")
 } else if(usuario.orcamento === 2){
     console.log("Moderado")
 } else if (usuario.orcamento === 3){
     console.log("3) Luxo")
+} else ("Digite uma opcao válida.")
+
+console.log("Qual tipo de clima você prefere?: ")
+console.log("1) Tropical / Quente")
+console.log("2) Frio / Neve")
+console.log("3) Temperado / Ameno")
+
+let resp1 = lerTeclado.questionInt("Escolha: ")
+let resp2
+if(resp1 === 1){
+    console.log("Qual voce prefere:")
+    console.log("1) Praia e mar")
+    console.log("2) Floresta e ecoturismo")
+    resp2 = lerTeclado.questionInt("Escolha:")
+} else if(resp1 === 2){
+    console.log("Qual voce prefere:")
+    console.log("1) Neve de verdade")
+    console.log("2) Frio sem neve")
+    resp2 = lerTeclado.questionInt("Escolha:")
+} else if(resp1 === 3){
+    console.log("Qual voce prefere:")
+    console.log("1) Cultura, museus e arquitetura histórica")
+    console.log("2) Natureza, trilhas e parques nacionais")
+    resp2 = lerTeclado.questionInt("Escolha:")
 }
-console.log(`Olá, ${usuario.nomeViajante}! Vamos encontrar o destino perfeito para você.`)
+let resp3
+if(resp1 === 1 && resp2 === 1){
+        console.log("Como voce prefere sua viagem:")
+        console.log("1) Animada — praias badaladas e muito agito")
+        console.log("2) Tranquila — sossego e natureza preservada")
+        resp3 = lerTeclado.questionInt("Escolha:")
+}   else if (resp1 === 2 && resp2 === 1){
+        console.log("Qual o seu objetivo:")
+        console.log("1) Praticar esportes de inverno (esqui, snowboard)")
+        console.log("2) Contemplar a paisagem nevada e relaxar")
+        resp3 = lerTeclado.questionInt("Escolha:")
+}   else if( resp1 === 3 && resp2 ===1){
+        console.log("Qual região voce prefere:")
+        console.log("1) Europa")
+        console.log("2) America do sul")
+        resp3 = lerTeclado.questionInt("Escolha:")
+}
+let destino = ""
+if(resp1 === 1 && resp2 === 1 && resp3 === 1){
+    destino = "A) Cancún (México) ou Fortaleza (Brasil)"
+}else if(resp1 === 1 && resp2 === 1 && resp3 === 2){
+    destino = "B) Maldivas ou Fernando de Noronha (Brasil)"
+}else if(resp1 === 1 && resp2 === 2){
+    destino = "C) Amazônia (Brasil) ou Costa Rica"
+}else if(resp1 === 2 && resp2 === 1 && resp3 === 1){
+    destino = "D) Aspen (EUA) ou Bariloche (Argentina)"
+}else if(resp1 === 2 && resp2 === 1 && resp3 === 2){
+    destino = "E) Ushuaia (Argentina) ou Lapônia (Finlândia)"
+}else if(resp1 === 2 && resp2 === 2 ){
+    destino = "F) Serra Gaúcha (Brasil) ou Patagônia Chilena"
+}else if(resp1 === 3 && resp2 === 1 && resp3 === 1){
+    destino = "G) Lisboa, Barcelona ou Roma"
+}else if(resp1 === 3 && resp2 === 1 && resp3 === 2){
+    destino = "H) Buenos Aires, Cusco ou Cartagena"
+}else if(resp1 === 3 && resp2 === 2){
+    destino = "I) Chapada dos Veadeiros ou Torres del Paine"
+}
+console.log(`
+===============================================
+//   |   RECOMENDAÇÃO DA AGÊNCIA VOYAGER           |
+//   ===============================================
+//   |   Viajante : <nomeViajante>                 |
+//   |   Idade    : <idadeViajante> anos           |
+//   |   Orçamento: <Econômico / Moderado / Luxo>  |
+//   |   Destino  : <destino>                      |
+//   ===============================================
+Boa viagem, ${usuario.nomeViajante}! O ${destino} espera por você.
+`)
+switch(usuario.orcamento){
+    case 1:
+        console.log("Econômico → Dica: procure voos com antecedência e use hostels ou Airbnb!")
+        break
+    case 2:
+        console.log("Moderado → Dica: hotéis 3 estrelas e pacotes combinados são ótimas opções!")
+        break
+    case 3:
+       console.log("Luxo → Dica: resorts all-inclusive e voos executivos são a sua praia!")
+       break
+}
