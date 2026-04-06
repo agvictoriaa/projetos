@@ -14,7 +14,7 @@ let lerTeclado = require('readline-sync')
 //    Se for resolvida em equipe, somente um deve fazer a entrega
 //    Se houverem 2 códigos iguais, ambos serão considerados plágio (nota 0).
 //
-//  • Nome do(s) aluno(s):
+//  • Nome do(s) aluno(s): Franciny Thais Braga Cunha, Vitória Cristiny Bandeira Lima, Gabriel Henrique de Freitas
 //
 // ============================================================
 
@@ -149,27 +149,34 @@ let lerTeclado = require('readline-sync')
 
 // → Seu código aqui:
 let usuario = {
-    nomeViajante: lerTeclado.question("DIgite seu nome: "),
+    nomeViajante: lerTeclado.question("Digite seu nome completo: "),
     idade: lerTeclado.questionInt("Digite sua idade: "),
     orcamento: lerTeclado.questionFloat("Digite uma opção: 1) Economica, 2) Moderado, 3) Luxo: ")
 }
-
+console.log("==========================")
 console.log(`Olá, ${usuario.nomeViajante}! Vamos encontrar o destino perfeito para você.`)
+console.log("==========================")
+
+let norcamento = ""
 
 if(usuario.orcamento === 1){
     console.log("Economica")
+    norcamento = "Economica"
 } else if(usuario.orcamento === 2){
     console.log("Moderado")
+    norcamento = "Moderado"
 } else if (usuario.orcamento === 3){
-    console.log("3) Luxo")
+    console.log("Luxo")
+    norcamento = "Luxo"
 } else ("Digite uma opcao válida.")
 
+console.log("==========================")
 console.log("Qual tipo de clima você prefere?: ")
 console.log("1) Tropical / Quente")
 console.log("2) Frio / Neve")
 console.log("3) Temperado / Ameno")
-
 let resp1 = lerTeclado.questionInt("Escolha: ")
+console.log("==========================")
 let resp2
 if(resp1 === 1){
     console.log("Qual voce prefere:")
@@ -186,7 +193,10 @@ if(resp1 === 1){
     console.log("1) Cultura, museus e arquitetura histórica")
     console.log("2) Natureza, trilhas e parques nacionais")
     resp2 = lerTeclado.questionInt("Escolha:")
+} else {
+    console.log("Digite uma opcao válida.")
 }
+console.log("==========================")
 let resp3
 if(resp1 === 1 && resp2 === 1){
         console.log("Como voce prefere sua viagem:")
@@ -203,35 +213,38 @@ if(resp1 === 1 && resp2 === 1){
         console.log("1) Europa")
         console.log("2) America do sul")
         resp3 = lerTeclado.questionInt("Escolha:")
+} else {
+    console.log("Digite uma opcao válida.")
 }
+console.log("==========================")
 let destino = ""
 if(resp1 === 1 && resp2 === 1 && resp3 === 1){
-    destino = "A) Cancún (México) ou Fortaleza (Brasil)"
+    destino = "Cancún (México) ou Fortaleza (Brasil)"
 }else if(resp1 === 1 && resp2 === 1 && resp3 === 2){
-    destino = "B) Maldivas ou Fernando de Noronha (Brasil)"
+    destino = "Maldivas ou Fernando de Noronha (Brasil)"
 }else if(resp1 === 1 && resp2 === 2){
-    destino = "C) Amazônia (Brasil) ou Costa Rica"
+    destino = "Amazônia (Brasil) ou Costa Rica"
 }else if(resp1 === 2 && resp2 === 1 && resp3 === 1){
-    destino = "D) Aspen (EUA) ou Bariloche (Argentina)"
+    destino = "Aspen (EUA) ou Bariloche (Argentina)"
 }else if(resp1 === 2 && resp2 === 1 && resp3 === 2){
-    destino = "E) Ushuaia (Argentina) ou Lapônia (Finlândia)"
+    destino = "Ushuaia (Argentina) ou Lapônia (Finlândia)"
 }else if(resp1 === 2 && resp2 === 2 ){
-    destino = "F) Serra Gaúcha (Brasil) ou Patagônia Chilena"
+    destino = "Serra Gaúcha (Brasil) ou Patagônia Chilena"
 }else if(resp1 === 3 && resp2 === 1 && resp3 === 1){
-    destino = "G) Lisboa, Barcelona ou Roma"
+    destino = "Lisboa, Barcelona ou Roma"
 }else if(resp1 === 3 && resp2 === 1 && resp3 === 2){
-    destino = "H) Buenos Aires, Cusco ou Cartagena"
+    destino = "Buenos Aires, Cusco ou Cartagena"
 }else if(resp1 === 3 && resp2 === 2){
-    destino = "I) Chapada dos Veadeiros ou Torres del Paine"
+    destino = "Chapada dos Veadeiros ou Torres del Paine"
 }
 console.log(`
 ===============================================
 //   |   RECOMENDAÇÃO DA AGÊNCIA VOYAGER           |
 //   ===============================================
-//   |   Viajante : <nomeViajante>                 |
-//   |   Idade    : <idadeViajante> anos           |
-//   |   Orçamento: <Econômico / Moderado / Luxo>  |
-//   |   Destino  : <destino>                      |
+//   |   Viajante : ${usuario.nomeViajante}                 |
+//   |   Idade    : ${usuario.idade} anos           |
+//   |   Orçamento: ${norcamento}  |
+//   |   Destino  : ${destino}                     |
 //   ===============================================
 Boa viagem, ${usuario.nomeViajante}! O ${destino} espera por você.
 `)
