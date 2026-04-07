@@ -168,7 +168,9 @@ if(usuario.orcamento === 1){
 } else if (usuario.orcamento === 3){
     console.log("Luxo")
     norcamento = "Luxo"
-} else ("Digite uma opcao válida.")
+} else if (usuario.orcamento < 0 || usuario.orcamento >= 4) {
+    console.log("Erro")
+}
 
 console.log("==========================")
 console.log("Qual tipo de clima você prefere?: ")
@@ -216,8 +218,10 @@ if(resp1 === 1 && resp2 === 1){
 } else {
     console.log("Digite uma opcao válida.")
 }
+
 console.log("==========================")
 let destino = ""
+
 if(resp1 === 1 && resp2 === 1 && resp3 === 1){
     destino = "Cancún (México) ou Fortaleza (Brasil)"
 }else if(resp1 === 1 && resp2 === 1 && resp3 === 2){
@@ -237,6 +241,7 @@ if(resp1 === 1 && resp2 === 1 && resp3 === 1){
 }else if(resp1 === 3 && resp2 === 2){
     destino = "Chapada dos Veadeiros ou Torres del Paine"
 }
+
 console.log(`
 ===============================================
 //   |   RECOMENDAÇÃO DA AGÊNCIA VOYAGER           |
