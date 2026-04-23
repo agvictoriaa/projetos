@@ -81,13 +81,13 @@ let produto = {
     nome: "Iphone",
     preco: 4.000,
     emPromocao: true
-}; 
+};
 
-if (produto.emPromocao === true){
+if (produto.emPromocao === true) {
     desconto = produto.preco * 0.10
     precoFinal = produto.preco - desconto
     console.log(`Ò valor do aparelho é ${produto.preco}, aplicando o desconto de 10% ficou ${precoFinal.toFixed(2)}`);
-} else{
+} else {
     console.log(`O aparelho ficou ${produto.preco}`)
 };
 
@@ -121,7 +121,7 @@ console.log("Número original:", nota); // 7.456789
 console.log("Com 1 casa decimal:", nota.toFixed(1)); // "7.5"
 console.log("Com 2 casas decimais:", nota.toFixed(2)); // "7.46"
 console.log("Com 3 casas decimais:", nota.toFixed(3)); // "7.457"
-console.log("Com 4 casas decimais:", nota.toFixed (5)); // "7.4567"
+console.log("Com 4 casas decimais:", nota.toFixed(5)); // "7.4567"
 
 // console.log("\n╔═══════════════════════════════════════════════════════╗");
 // console.log("║ EXERCÍCIO 2: O toFixed RETORNA UMA STRING             ║");
@@ -288,3 +288,120 @@ console.log("Com 4 casas decimais:", nota.toFixed (5)); // "7.4567"
 // console.log("Imposto: R$", imposto.toFixed(2));
 // console.log("─".repeat(40));
 // console.log("TOTAL: R$", total.toFixed(2));
+
+
+// EXERCÍCIO 7 – Percorrendo um array
+// ------------------------------------------------------------
+// a) Utilizando o array:
+// b) Utilizando de um for, exiba cada cidade com seu índice no formato:
+//    "[<indice>] - <Cidade>"
+// c) Ao final, exiba: "Total de cidades: <quantidade>"
+
+// → Seu código aqui:
+const cidades = ["São Paulo", "Rio de Janeiro", "Curitiba", "Salvador", "Fortaleza"];
+for (let i = 0; i < cidades.length; i++) {
+    console.log(`[${i}] - ${cidades[i]}`);
+};
+console.log(`Total de cidades: ${cidades.length}`);
+// Aqui, o loop for é usado para iterar sobre o array de cidades. A variável i começa em 0 e vai até cidades.length - 1, que é o índice do último elemento do array. A cada iteração, o índice i e a cidade correspondente (cidades[i]) são exibidos no console no formato "[<indice>] - <Cidade>". Depois que o loop termina, a quantidade total de cidades pode ser exibida usando cidades.length, que retorna o número de elementos no array.
+
+
+
+
+// ------------------------------------------------------------
+// EXERCÍCIO 8 – Maior e menor valor
+// ------------------------------------------------------------
+// a) Declare o array:
+//    const temperaturas = [28, 15, 32, 9, 21, 37, 14, 25];
+// b) Usando um for, encontre o maior e o menor valor do array.
+// c) Exiba:
+//    "Maior temperatura: <maior>°C"
+//    "Menor temperatura: <menor>°C"
+
+// → Seu código aqui:
+const temperaturas = [28, 15, 32, 9, 21, 37, 14, 25];
+let maior = temperaturas[0];
+let menor = temperaturas[0];
+for (let i = 0; i < temperaturas.length; i++) {
+    if (temperaturas[i] > maior){
+        maior = temperaturas[i]
+    }
+    if (temperaturas[i] < menor){
+        menor = temperaturas[i]
+    }
+};
+console.log(`A maior temperatura é: ${maior}°C`);
+console.log(`A menor temperatura é: ${menor}°C`);
+// ------------------------------------------------------------
+// EXERCÍCIO 9 – Contando com condição
+// ------------------------------------------------------------
+// a) Utilizando do array:
+// const idades = [12, 25, 17, 34, 15, 42, 16, 29, 8, 19];
+// b) Usando um for, conte:
+//    - Quantas pessoas são menores de idade (< 18)
+//    - Quantas são maiores de idade (>= 18)
+// c) Exiba os dois totais.
+
+// → Seu código aqui:
+
+
+console.log("_______________________________");
+
+
+// ------------------------------------------------------------
+// EXERCÍCIO 10 – Média com array
+// ------------------------------------------------------------
+// a) Utilizando do array:
+const salarios = [1800, 3200, 950, 4500, 2100, 1500, 7800, 2900];
+// b) Usando um for, calcule a média salarial.
+// c) Exiba a média no formato: "Média salarial: R$ <media>"
+// d) Usando outro for, exiba cada salário e se está acima ou abaixo da média:
+//    "R$ 1800,00 – Abaixo da média"
+//    "R$ 3200,00 – Acima da média"
+
+// → Seu código aqui:
+
+
+console.log("_______________________________");
+
+
+// ------------------------------------------------------------
+// EXERCÍCIO 11 – Ranking de notas
+// ------------------------------------------------------------
+// a) Peça ao usuário o nome de 3 alunos e suas três notas, um por vez.
+// b) Armazene cada aluno como um objeto com as propriedades 'nome' e 'notas'.
+// c) Guarde os 3 objetos em um array chamado 'turma'.
+// d) Calcule a média das notas da turma e armazene em uma variável 'media'.
+// e) Percorra o array e para cada aluno exiba no console:
+//    "<nome>: <nota> – <situação>"
+//    A situação deve ser:
+//      "Aprovado"    → nota >= 7
+//      "Recuperação" → nota >= 5 e < 7
+//      "Reprovado"   → nota < 5
+// f) Ao final, exiba a média da turma no formato:
+//    "Média da turma: <media>"
+// g) Exiba o array 'turma' com console.table().
+
+// → Seu código aqui:
+
+
+console.log("_______________________________");
+
+
+// ------------------------------------------------------------
+// EXERCÍCIO 12 – Coletando dados com for e input
+// ------------------------------------------------------------
+// a) Pergunte ao usuário quantos produtos quer cadastrar (questionInt()).
+// b) Usando um for, colete de cada produto:
+//    - nome (question())
+//    - preco (questionFloat())
+// c) Armazene cada produto como objeto em um array 'estoque'.
+// d) Após o cadastro, percorra o array e exiba cada produto no formato:
+//    "<nome>: R$ <preco>"
+// e) Exiba o produto mais caro e o mais barato.
+// f) Exiba o array com console.table().
+
+// → Seu código aqui:
+
+
+console.log("_______________________________");
