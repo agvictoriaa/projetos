@@ -165,7 +165,7 @@ console.log("_______________________________");
 // EXERCÍCIO 10 – Média com array
 // ------------------------------------------------------------
 // a) Utilizando do array:
-    const salarios = [1800, 3200, 950, 4500, 2100, 1500, 7800, 2900];
+    const salarios = [18000, 3200, 950, 4500, 2100, 1500, 7800, 2900];
 // b) Usando um for, calcule a média salarial.
 // c) Exiba a média no formato: "Média salarial: R$ <media>"
 // d) Usando outro for, exiba cada salário e se está acima ou abaixo da média:
