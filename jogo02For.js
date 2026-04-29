@@ -19,29 +19,7 @@
 // Para números aleatórios, utilize a função Math.random() do Javascript
 // ============================================================
 
-let lerTeclado = require('readline-sync');
 
-// ============================================================
-// CONFIGURAÇÕES DO JOGO (não altere)
-// ============================================================
-
-const MAX_TENTATIVAS = 7;
-const NUM_MIN = 1;
-const NUM_MAX = 100;
-
-// ============================================================
-// MENU PRINCIPAL
-// ============================================================
-
-console.log("|==============================|");
-console.log("|     ADIVINHE O NÚMERO        |");
-console.log("|==============================|");
-console.log("|  1 – Eu adivinho o número    |");
-console.log("|  2 – Computador adivinha     |");
-console.log("|  3 – Sair                    |");
-console.log("|==============================|");
-
-const modo = lerTeclado.questionInt("\nEscolha o modo: ");
 
 console.log("_______________________________");
 
@@ -82,41 +60,35 @@ console.log("_______________________________");
 //           "Tentativas usadas: <i>"
 //           "Resultado: Vitória" ou "Resultado: Derrota"
 
+// FAZ SWITCH PARA AS ESCOLHAS DO JOGO!
 
-for (let i = 1; i <= 7; i++) {
-    let numeroAleatorio = Math.floor(Math.random() * 99) + 1;
-    let adivinheONumero = lerTeclado.questionInt("Adivinhe um numero de 1 a 100: ");
-    console.log(`O número que voce digitou foi ${adivinheONumero}`);
-    if (adivinheONumero === numeroAleatorio) {
-        console.log(`Parabéns! Você acertou em ${i} tentativa(s)!`);
-    } else if (adivinheONumero > numeroAleatorio) {
-        console.log("Muito alto! Tente um número menor.");
-    } else if (adivinheONumero < numeroAleatorio) {
-        console.log("Muito baixo! Tente um número maior.");
-    }
+// let numeroAleatorio = Math.floor(Math.random() * 99) + 1;// math.floor arredonda o numero para baixo.
+// // abaixo seria as instruções.
+// let contadorDeTentativas = 1;
 
-    console.log(`Tentativas restantes: ${7 - i}`);
+// for (let i = 1; i <= 7; i++) {// for vai ser de quantas vezes eu posso jogar e dentro dele o jogo.
+//     contadorDeTentativas++;
+//     const adivinheONumero = lerTeclado.questionInt("Adivinhe um numero de 1 a 100: ");
+//     console.log(`O número que voce digitou foi ${adivinheONumero}`);
+//     if (adivinheONumero == numeroAleatorio) { // errei, inverti as variaveis.
+//         console.log(`Parabéns! Você acertou em ${i} tentativa(s)!`);
+//     } else if (adivinheONumero > numeroAleatorio) {
+//         console.log("Muito alto! Tente um número menor.");
+//     } else if (adivinheONumero < numeroAleatorio) {
+//         console.log("Muito baixo! Tente um número maior.");
+//     }
 
-    if (i === 7) {
-        console.log(`Fim de jogo! O número era ${numeroAleatorio}.`);
-    }
-}
+//     console.log(`Tentativas restantes: ${7 - i}`);
+
+//     if (i === 7) {
+//         console.log(`Fim de jogo! O número era ${numeroAleatorio}.`);
+//     }
+// }
 // → Seu código do MODO 1 aqui:
 
 /*
 
-
-
-
-
-
 */
-
-
-
-
-
-
 
 // ============================================================
 // MODO 2 – Jogador pensa, computador adivinha
@@ -138,3 +110,59 @@ for (let i = 1; i <= 7; i++) {
 // PASSO 5 – Se o computador não acertar, exiba uma mensagem de derrota e o número que o jogador estava pensando.
 
 // Implemente seu código abaixo:
+let lerTeclado = require('readline-sync');
+
+// ============================================================
+// CONFIGURAÇÕES DO JOGO (não altere)
+// ============================================================
+
+const MAX_TENTATIVAS = 7;
+const NUM_MIN = 1;
+const NUM_MAX = 100;
+
+// ============================================================
+// MENU PRINCIPAL
+// ============================================================
+
+console.log("|==============================|");
+console.log("|     ADIVINHE O NÚMERO        |");
+console.log("|==============================|");
+console.log("|  1 – Eu adivinho o número    |");
+console.log("|  2 – Computador adivinha     |");
+console.log("|  3 – Sair                    |");
+console.log("|==============================|");
+
+const modo = lerTeclado.questionInt("\nEscolha o modo: ");
+
+switch (modo) {
+    case 1:
+        break;
+    case 2:
+
+    console.log("Digite um numero de 1 a 100")
+    let min = NUM_MIN
+    let max = NUM_MAX
+    let palpite = Math.floor(Math.random(max - min) / 2)
+    for(let i = 1; i >= MAX_TENTATIVAS; i++){
+        console.log(`Tentativa ${i}: Meu palpite é ${palpite}!`)
+        let resultado = lerTeclado.questionInt("1 – Acertei | 2 – Muito alto | 3 – Muito baixo")
+        if (resultado == 1){
+            console.log("Acertei!")
+            resposta = true;
+        } else if (resultado == 2){
+            min = palpite - 1
+            console.log("Muito alto")
+        } else if (resultado == 3){
+            max = palpite + 1
+            console.log("Muito baixo")
+        } else {
+            console.log("Opção invalida.")
+        }
+    }
+        break;
+    case 3:
+        console.log("Saindo...")
+    default:
+        console.log("Opção invalida. Saindo...")
+        break;
+};
