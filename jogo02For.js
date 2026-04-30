@@ -145,7 +145,8 @@ switch (modo) {
     let palpite = Math.floor(Math.random(max - min) / 2)
     for(let i = 1; i >= MAX_TENTATIVAS; i++){
         console.log(`Tentativa ${i}: Meu palpite é ${palpite}!`)
-        let resultado = lerTeclado.questionInt("1 – Acertei | 2 – Muito alto | 3 – Muito baixo")
+        let resultado = lerTeclado.questionInt("1 – Acertei |,
+         2 – Muito alto | 3 – Muito baixo")
         if (resultado == 1){
             console.log("Acertei!")
             resposta = true;

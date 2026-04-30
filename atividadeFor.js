@@ -121,10 +121,13 @@ let lerTeclado = require('readline-sync')
 // c) Ao final, exiba: "Total de cidades: <quantidade>"
 
 // → Seu código aqui:
+let contador = 0;
 const cidades = ["São Paulo", "Rio de Janeiro", "Curitiba", "Salvador", "Fortaleza"];
 for (let i = 0; i < cidades.length; i++) {
     console.log(`Indice:[${i}] ${cidades[i]}`);
-  }
+    contador++
+    console.log(`Total de cidades: ${contador}`)
+  };
 
 
 
