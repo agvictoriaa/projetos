@@ -85,31 +85,31 @@ let lerTeclado = require('readline-sync')
 // b) Calcule e exiba a média.
 
 // → Seu código aqui:
-let nota = lerTeclado.questionInt("Ola! Digite a nota: ");
-let soma = 0; // Somar o numero de vezes que joguei as notas e fazer parte do calculo da media, inicia em 
-// zero, porque vou começar a colocar numero dentro do while.
-let quantidade = 0; // Conta quantas vezes eu digitei as notas, e vai dentro do while.
+// let nota = lerTeclado.questionInt("Ola! Digite a nota: ");
+// let soma = 0; // Somar o numero de vezes que joguei as notas e fazer parte do calculo da media, inicia em 
+// // zero, porque vou começar a colocar numero dentro do while.
+// let quantidade = 0; // Conta quantas vezes eu digitei as notas, e vai dentro do while.
 
-while (nota !== -1) { // o -1 não vai entrar no calculo, ele só serve para contar quantas notas eu coloquei e 
-    // fazer a media.
-    if (nota < 0 || nota > 10) { // uso para as condições, definir de qual numero a qual numero ele pode colocar
-        // Uso para não colocar numero invalido, string e assim por diante.
-        console.log("Nota invalida.")
-    } else {
-        soma += nota // a Soma + a nota vai fazer a media, exemplo: Coloquei 3 notas, esse numero de vezes que 
-        // eu coloquei, vai definir a media. 
-        quantidade++
-    }
-    nota = lerTeclado.questionInt("Ola! Digite a nota: ") // Aqui eu sempre preciso colocar novamente a variavel
-    // de pergunta para o loop voltar, porque caso contrario o while não vai entender se roda ou não.
-}
+// while (nota !== -1) { // o -1 não vai entrar no calculo, ele só serve para contar quantas notas eu coloquei e 
+//     // fazer a media.
+//     if (nota < 0 || nota > 10) { // uso para as condições, definir de qual numero a qual numero ele pode colocar
+//         // Uso para não colocar numero invalido, string e assim por diante.
+//         console.log("Nota invalida.")
+//     } else {
+//         soma += nota // a Soma + a nota vai fazer a media, exemplo: Coloquei 3 notas, esse numero de vezes que 
+//         // eu coloquei, vai definir a media. 
+//         quantidade++
+//     }
+//     nota = lerTeclado.questionInt("Ola! Digite a nota: ") // Aqui eu sempre preciso colocar novamente a variavel
+//     // de pergunta para o loop voltar, porque caso contrario o while não vai entender se roda ou não.
+// }
 
-if (quantidade > 0) {
-    let media = soma / quantidade
-    console.log(`Media ${media}`)
-} else {
-    console.log("Nenhuma nota válida foi digitada");
-}
+// if (quantidade > 0) {
+//     let media = soma / quantidade
+//     console.log(`Media ${media}`)
+// } else {
+//     console.log("Nenhuma nota válida foi digitada");
+// }
 
 
 
@@ -125,9 +125,31 @@ if (quantidade > 0) {
 // c) O menu deve repetir até o usuário escolher 0.
 
 // → Seu código aqui:
+// let usuario = lerTeclado.questionInt("Digite a opcao desejada. 1 - Hora | 2 - Data | 0 - Sair: ")
+// let horaAtual = new Date().toLocaleTimeString();
+// let dataAtual = new Date().toLocaleDateString();// Eu não preciso de uma variavel chamada "Sair" eu posso deixar 
+// // o case opção 0 vazio e colocar no final do do while a opção dizendo "Saindo" que ele vai reproduzir. 
 
-
-console.log("_______________________________");
+// do {
+//     switch (usuario) { // No switch, eu costumo colocar a variável que eu vou escolher a opção, pois se trata de opções mesmo. 
+//         case 1: horaAtual
+//             console.log(`Agora são ${horaAtual}`)
+//             usuario = lerTeclado.questionInt("Digite a opcao desejada. 1 - Hora | 2 - Data | 0 - Sair: ")
+//             break;
+//         case 2: dataAtual
+//             console.log(`Hoje é dia ${dataAtual}`)
+//             usuario = lerTeclado.questionInt("Digite a opcao desejada. 1 - Hora | 2 - Data | 0 - Sair: ")
+//             break;
+//         case 0:
+//             break;
+//         default:
+//             console.log("Digite um numero valido")
+//             usuario = lerTeclado.questionInt("Digite a opcao desejada. 1 - Hora | 2 - Data | 0 - Sair: ")
+//     }
+// } while (usuario !== 0); // Aqui significa "Se a escolha for diferente de 0 o loop vai se repetir, porque ele é o oposto
+// // de igual a 0, ou seja !== significa "Diferente de 0"
+// console.log("Saindo...") // coloquei o console fora do while porque achei mais facil de reproduzir, eu não estava
+// // conseguindo fazer dentro (lá ele).
 
 
 // ------------------------------------------------------------
@@ -158,8 +180,13 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-
-console.log("_______________________________");
+// let usuario = lerTeclado.questionInt("Digite um numero inteiro: ") // aqui eu busco a informação do usuario
+// let i = 1; // aqui vai ser o i para colocar dentro do while.
+// while(i <= 10){ // enquanto I for menor ou igual a 10 ele vai exibir o numero inteiro que o usuario digitar * o I até chegar no 10.
+//     let resultado = usuario * i // exemplo 5 * 1 - 5 * 2 - 5 * 3 - 5 * 4...
+//     console.log(`${usuario} x ${i} = ${resultado}`)
+//     i++ // aqui é usado de contador, para que o resultado sempre vá exibindo. 5 * 1 - 5 * 2 - 5 * 3 - 5 * 4...
+// };
 
 
 // ------------------------------------------------------------
@@ -175,8 +202,26 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+// let saldo = 1000;
+// let rodada = 0;
+// let saque = 0;
 
-console.log("_______________________________");
+// while (saldo > 0 && rodada < 10) {// Condição: Se saldo for maior que zero e rodada for menor que 10 - 
+//     // Ele vai fazer saques até dar 10 rodadas ou acabar o saldo!
+//     saque = Math.floor(Math.random() * 151) + 50  // math floor e math random tem que ser usado para fazer
+//     // os saques aleatorios, tudo o que eu quiser que seja lançado numeros eu uso random, inteiros floor + random.
+//     if (saque > saldo) {
+//         console.log("Saldo insuficiente. Fim!")
+//         break; // Aqui é usado um interrompendo laços para que o loop pare quando o saldo acabar. 
+//     } else {
+//         saldo -= saque // aqui eu usei o saldo - o saque para dar o resultado de quanto sacou, qual o saldo
+//         // e numero de rodadas. 
+//         console.log(`Rodada ${rodada}: sacou R$${saque} | Novo saldo: R$${saldo}`)
+//     }
+//     rodada++ // Usada como contador para contar cada vez que rodar. 
+// }
+// console.log(`Saldo restante: ${saldo} | Total de rodadas ${rodada}`) // esse console de resultados, sempre
+// // fora do while.
 
 
 // ------------------------------------------------------------
@@ -192,6 +237,18 @@ console.log("_______________________________");
 // d) Exiba: "Total de contatos cadastrados: <qtd>"
 
 // → Seu código aqui:
+let contatos = [];
+let outro;
+do {
+   let nome = lerTeclado.question("Digite o nome: ")
+   let telefone = lerTeclado.questionInt("Digite o telefone: ")
 
+   contatos.push({
+       nome: nome,
+       telefone: telefone
+   })
+    outro = lerTeclado.keyInYN("Adicionar outro contato? ")
+} while(outro === true);
+console.table(contatos);
 
 console.log("_______________________________");
