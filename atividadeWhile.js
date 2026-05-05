@@ -237,8 +237,9 @@ console.log("_______________________________");
 // d) Exiba: "Total de contatos cadastrados: <qtd>"
 
 // → Seu código aqui:
-let contatos = [];
-let outro;
+let contatos = []; // Aqui em contatos temos uma array, eu coloco de forma vazia pois dentro do DO eu irei preencher.
+let outro; // QUALQUER VARIAVEL EU PRECISO DECLARAR FORA DO DO E WHILE PARA PODER RODAR! - Essa em expecifico
+// é a variavel para saber se o usuario deseja adicionar outro contato ou não! 
 do {
    let nome = lerTeclado.question("Digite o nome: ")
    let telefone = lerTeclado.questionInt("Digite o telefone: ")
@@ -246,9 +247,11 @@ do {
    contatos.push({
        nome: nome,
        telefone: telefone
-   })
-    outro = lerTeclado.keyInYN("Adicionar outro contato? ")
+   }) // Faço dessa forma para ficar mais facil. Uso o push que é a função de adicionar coisas dentro de uma lista
+   // e dentro dessa função mesmo eu já crio o objeto, assim fica mais fácil. 
+    outro = lerTeclado.keyInYN("Adicionar outro contato? ") // Lembra a avariavel que você declarou lá fora? 
+    // Será usado agora no código. 
 } while(outro === true);
-console.table(contatos);
+console.table(contatos); // Aqui
 
 console.log("_______________________________");
