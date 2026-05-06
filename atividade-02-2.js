@@ -28,7 +28,7 @@ console.log(aluno);
 // b) Exiba a cidade
 
 // → Seu código aqui:
-aluno.endereco = ["Avenida Paulista",1956,"Centro", 03960030, "São Paulo"];
+aluno.endereco = ["Avenida Paulista",1956,"Centro", 3960030 , "São Paulo"];
 console.log(aluno);
 
 // ------------------------------------------------------------
