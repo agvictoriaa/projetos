@@ -166,9 +166,32 @@ let lerTeclado = require('readline-sync')
 //    "<nome> acertou após <tentativas> tentativa(s)! O número era <secreto>."
 
 // → Seu código aqui:
+// let number = Math.floor(Math.random() * 50) + 1; // Uso o math floor para fazer o numero inteiro e math random para que ele jogue o numero secreto
+// //(numero aleatorio)
+// let nome = lerTeclado.question("Digite o seu nome: ")// Aqui eu crio a variavel do nome normal 
+// let palpite; // Essa variavel é a do palpite, eu preciso sempre criar fora do while senão ela não roda no código. Posso apenas criar a variável 
+// // e colocar dentro do while depois.
+// let tentativas = 0; // Coloco zero porque ele vai iniciar ainda, e dentro do loop vai começar a contar as tentativas. 
+// // Da para colocar NULL também, vai rodar do mesmo jeito. O que importa é o contador em cada if ou switch de dentro do while. 
+// while (true) {// aqui daria para colocar tambem o <palpite !== number> ou seja: Enquanto palpite for diferente do numero que o computador
+//     // vai lançar, o loop vai rodar. Mas caso for igual ele encerra. Se eu não estivesse usando o quebra laçõ de repetição, eu usaria o !==. 
+//     palpite = lerTeclado.questionInt("Digite um numero de 1 a 50: ") // Aqui agora eu lanço a pergunta. 
+//     if (palpite < number) { //aqui eu utilizei if porque eu preciso saber se é menor ou maior, e o switch case não entraria bem, já que trata 
+//         // tudo se for ===, serve mais para escolhas. 
+//         console.log("Muito baixo! Tente maior.")
+//         tentativas++// Aqui eu utilizo para contar minhas tentativas. FAMOSO CONTADOR!!!
+//     } else if (palpite > number) {
+//         console.log("Muito alto! Tente menor.")
+//         tentativas++ // Aqui eu utilizo para contar minhas tentativas. FAMOSO CONTADOR!!!
+//     } else if (palpite === number) {
+//         console.log("Acertou!")
+//         break;
+//     }
+// };
 
+// console.log(`${nome} acertou após ${tentativas} tentativa(s)! O número era ${number}.`) // Console do lado de fora para poder rodar o numero de 
+// // tentativas. 
 
-console.log("_______________________________");
 
 
 // ------------------------------------------------------------
@@ -180,13 +203,13 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-// let usuario = lerTeclado.questionInt("Digite um numero inteiro: ") // aqui eu busco a informação do usuario
-// let i = 1; // aqui vai ser o i para colocar dentro do while.
-// while(i <= 10){ // enquanto I for menor ou igual a 10 ele vai exibir o numero inteiro que o usuario digitar * o I até chegar no 10.
-//     let resultado = usuario * i // exemplo 5 * 1 - 5 * 2 - 5 * 3 - 5 * 4...
-//     console.log(`${usuario} x ${i} = ${resultado}`)
-//     i++ // aqui é usado de contador, para que o resultado sempre vá exibindo. 5 * 1 - 5 * 2 - 5 * 3 - 5 * 4...
-// };
+let usuario = lerTeclado.questionInt("Digite um numero inteiro: ") // aqui eu busco a informação do usuario
+let i = 1; // aqui vai ser o i para colocar dentro do while.
+while(i <= 10){ // enquanto I for menor ou igual a 10 ele vai exibir o numero inteiro que o usuario digitar * o I até chegar no 10.
+    let resultado = usuario * i // exemplo 5 * 1 - 5 * 2 - 5 * 3 - 5 * 4...
+    console.log(`${usuario} x ${i} = ${resultado}`)
+    i++ // aqui é usado de contador, para que o resultado sempre vá exibindo. 5 * 1 - 5 * 2 - 5 * 3 - 5 * 4...
+};
 
 
 // ------------------------------------------------------------
@@ -203,7 +226,7 @@ console.log("_______________________________");
 // → Seu código aqui:
 
 // let saldo = 1000;
-// let rodada = 0;
+// let rodada = 1;
 // let saque = 0;
 
 // while (saldo > 0 && rodada < 10) {// Condição: Se saldo for maior que zero e rodada for menor que 10 - 
@@ -252,6 +275,4 @@ do {
     outro = lerTeclado.keyInYN("Adicionar outro contato? ") // Lembra a avariavel que você declarou lá fora? 
     // Será usado agora no código. 
 } while(outro === true);
-console.table(contatos); // Aqui
-
-console.log("_______________________________");
+console.table(contatos); // Aqui eu uso o table para mostrar a array em tabela. 
